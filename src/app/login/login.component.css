@@ -1,0 +1,39 @@
+.my-wrapper {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+}
+
+.my-wrapper{
+    background-image: url("../../assets/images/zuca.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    color: #fff;
+
+}
+
+.input-field input {
+   color: white !important;
+ }
+
+[type="checkbox"].filled-in:checked + span:not(.lever):after{
+    background-color: red;
+    border: 2px solid red;
+}
+
+
+.login .card{
+    background: rgba(0,0,0,0.5);
+}
+
+.login label {
+    color: #fff
+}
+
+.container{
+    margin: 0 !important;
+}

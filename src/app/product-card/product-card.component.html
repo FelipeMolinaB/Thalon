@@ -1,0 +1,34 @@
+<div class="card hoverable">
+  <div class="card-image">
+    <img src="assets/images/products/{{product.image}}" class="center">
+  </div>
+  <div class="card-content">
+    <ul class="collapsible">
+      <li>
+        <div class="collapsible-header"><span class="card-title">{{product.name}}</span><span *ngIf="product.inStock==0" class="new badge red" data-badge-caption="Agotado"></span></div>
+        <div class="collapsible-body"><span>{{product.description}}</span></div>
+      </li>
+    </ul>
+    <div class="right-align">
+      <div *ngIf="parent=='shopping-cart';then thenBlockP;else elseBlockP"></div>
+      <ng-template #thenBlockP>
+        <span class="card-title price"><i>P. Unitario:</i> {{getPriceIn(product.id,listView,currency) | currency:currency.code:'code'}}</span>
+        <span class="card-title price"><i>P. Total:</i> {{getPriceIn(product.id,listView,currency)*getElementQuantity(product.id,addedProducts) | currency:currency.code:'code'}}</span>
+      </ng-template>
+      <ng-template #elseBlockP>
+        <span class="card-title price"><i>Precio:</i> {{getPriceIn(product.id,listView,currency) | currency:currency.code:'code'}}</span>
+      </ng-template>
+    </div>
+  </div>
+  <div class="card-action center-align">
+    <div *ngIf="wasAdded(product.id,addedProducts);then thenBlock;else elseBlock"></div>
+    <ng-template #thenBlock>
+      <a (click)="updateQuantity(addedProducts,product.id,-1,scStore)" class="btn-floating red"><i class="material-icons">remove</i></a>
+      <span class="counter">{{getElementQuantity(product.id,addedProducts)}}</span>
+      <a (click)="updateQuantity(addedProducts,product.id,1,scStore)" class="btn-floating red"><i class="material-icons">add</i></a>
+    </ng-template>
+    <ng-template #elseBlock>
+      <a (click)="addProduct(product.id,scStore,productType)" class="btn red" [ngClass]="(product.inStock==0)?'disabled':''">Agregar</a>
+    </ng-template>
+  </div>
+</div>

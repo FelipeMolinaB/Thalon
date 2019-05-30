@@ -1,0 +1,83 @@
+ul {
+  padding-left: 0;                  /* remove default UL padding */
+}
+
+ul li{
+  display: inline;
+}
+
+ul li i{
+    padding: 0 5px;
+    font-size: 30px;
+}
+
+ul li a{
+    color: black;
+}
+
+a img{
+  height: 30px;
+  padding: 0 5px;
+}
+
+.dropdown-content li>a>i{
+  margin: 0;
+}
+
+.dropdown-content li>a{
+  padding: 12px 0px;
+  justify-content: center;    /* horizontal alignment (applies to child elements) */
+  align-items: center;
+}
+
+.counter{
+  padding: 0 10%;
+}
+
+td img {
+  height: 100px;
+  width: auto;
+}
+
+.modal-content .row{
+  margin: 0;
+}
+
+.modal .modal-footer{
+  padding-right: 24px;
+}
+
+
+.fixed-action-btn{
+  right: calc(100% - 82px);
+}
+
+
+.card-image img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 150px;
+  width: auto;
+}
+
+.card-action{
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.counter{
+  padding: 0 10%;
+}
+
+.card-action .btn{
+  height: 40px;
+  line-height: 40px;
+}
+.card-content .price{
+  font-size: 16px;
+  margin-bottom: 0;
+}
+/* .card-content{
+  padding-bottom: 10px;
+} */

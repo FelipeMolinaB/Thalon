@@ -1,0 +1,138 @@
+<div class="col s12 l9 offset-l3">
+  <div class="row" *ngIf="getTotalPrice()!=0">
+    <h4>  Sus Productos:</h4>
+    <div class="hide-on-med-and-down">
+      <div class="col s12">
+        <table class="centered">
+          <thead>
+            <tr>
+              <th>Producto</th>
+              <th>Nombre</th>
+              <th><a class='dropdown-trigger' href='#' data-target='currencyDropdown'><img src="assets/images/flags/{{currency.img}}" alt=""></a>Precio Unitario</th>
+              <th>Cantidad</th>
+              <th>Precio Total</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr *ngFor="let product of listView">
+              <td><img src="assets/images/products/{{product.image}}" class="center"></td>
+              <td>{{product.name}}</td>
+              <td>{{getPriceIn(product.id,listView,currency) | currency:currency.code:'code'}}</td>
+              <td>
+                <a (click)="updateQuantity(addedProducts,product.id,-1,scStore)" class="btn-floating red"><i class="material-icons">remove</i></a>
+                <span class="counter">{{getElementQuantity(product.id,addedProducts)}}</span>
+                <a (click)="updateQuantity(addedProducts,product.id,1,scStore)" class="btn-floating red"><i class="material-icons">add</i></a>
+              </td>
+              <td>{{getPriceIn(product.id,listView,currency)*getElementQuantity(product.id,addedProducts) | currency:currency.code:'code'}}</td>
+          </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <div class="col s12">
+        <div class="right center-align hide-on-med-and-down">
+          <h5><i>Total a pagar: </i>{{getTotalPrice() | currency:currency.code:'code'}}</h5>
+          <a class="btn red white-text modal-trigger" href="#modal-on-large">Comprar</a>
+        </div>
+      </div>
+
+    </div>
+
+    <div class="hide-on-large-only">
+      <div class="col s12">
+        <div *ngFor="let product of listView" class="col s10 offset-s1 m6">
+          <app-product-card [parent]="'shopping-cart'" [product]="product" [listView]="listView"></app-product-card>
+        </div>
+      </div>
+
+      <div class="fixed-action-btn">
+        <a class="btn-floating btn-large green modal-trigger" href="#modal-on-med-and-down">
+          <i class="large material-icons">payment</i>
+        </a>
+      </div>
+    </div>
+  </div>
+
+
+  <div *ngIf="getTotalPrice()==0">
+    <h1>Carrito vacio</h1>
+  </div>
+</div>
+
+
+<ul id='currencyDropdown' class='dropdown-content'>
+  <li *ngFor="let currencyItem of currenciesList"><a class="center-align" (click)="setCurrency(currencyItem.code,currenciesList,ccStore)"><img src="assets/images/flags/{{currencyItem.img}}">{{currencyItem.code}}</a></li>
+</ul>
+
+<div id="modal-on-large" class="modal scroll">
+  <div class="modal-content">
+    <h4>Confirmar compra</h4>
+    <p>Por favor escoja su medio de pago:</p>
+    <table class="centered">
+      <tbody>
+        <tr>
+          <td>Total a pagar</td>
+          <td>Medio de pago</td>
+        </tr>
+        <tr>
+          <td>{{getTotalPrice() | currency:currency.code:'code'}}</td>
+          <td>
+            <div class="row">
+              <div class="input-field input-field col s8 offset-s2">
+                <select #paymentMethodL>
+                  <option value="" disabled selected>Escoja una opción</option>
+                  <option *ngFor="let paymentMethod of paymentMethods" >{{paymentMethod.name}}</option>
+                </select>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+    <div class="row">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s12">
+            <textarea #commentsL (focus)="onFocus('l')" (blur)="onBlur('l')" id="textarea-l" class="materialize-textarea scroll"></textarea>
+            <label for="textarea1">Comentarios</label>
+            <span class="helper-text">Ej: Por favor el café con leche deslactosada</span>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <div class="modal-footer">
+    <a (click)="sendGuestsRequestL()" class="modal-close green btn">Confirmar</a>
+  </div>
+</div>
+
+<div id="modal-on-med-and-down" class="modal scroll">
+  <div class="modal-content">
+    <h5>Confirmar compra <a class='dropdown-trigger right' href='#' data-target='currencyDropdown'><img src="assets/images/flags/{{currency.img}}" alt=""></a></h5>
+    <p align="justify">Su pedido tiene un precio total de {{getTotalPrice() | currency:currency.code:'code'}}. Por favor escoja su medio de pago</p>
+    <div class="row">
+      <div class="input-field col s12 m10 offset-m1">
+        <select #paymentMethodS>
+          <option value="" disabled selected>Escoja una opción</option>
+          <option *ngFor="let paymentMethod of paymentMethods">{{paymentMethod.name}}</option>
+        </select>
+      </div>
+    </div>
+    <div class="row">
+      <form class="col s12">
+        <div class="row">
+          <div class="input-field col s12">
+            <textarea #commentsS (focus)="onFocus('m')" (blur)="onBlur('m')" id="textarea-m" class="materialize-textarea scroll"></textarea>
+            <label for="textarea1">Comentarios</label>
+            <span class="helper-text">Ej: Por favor el café con leche deslactosada</span>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <a (click)="sendGuestsRequestS()" class="modal-close green btn">Confirmar</a>
+  </div>
+</div>

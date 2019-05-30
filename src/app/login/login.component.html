@@ -1,0 +1,39 @@
+<section class="my-wrapper">
+  <div class="row my-wrapper valign-wrapper center-align login">
+      <div class="card-container col s10 m8 l4 offset-s1 offset-m2 offset-l4">
+          <div class="card hoverable">
+              <div class="card-action red white-text">
+                  <h3>Ingreso</h3>
+              </div>
+              <div class="card-content">
+                  <form action="#" #loginForm="ngForm">
+                      <div class="row">
+                        <div class="input-field col s12">
+                          <i class="material-icons prefix">account_circle</i>
+                          <input id="user" #user type="text" class="validate" required>
+                          <label for="email">Usuario</label>
+                        </div>
+                      </div>
+                      <div class="row">
+                          <div class="input-field col s12">
+                              <i class="material-icons prefix">lock</i>
+                              <input id="password" #password type="password" class="validate" required>
+                              <label for="password">Contraseña</label>
+                          </div>
+                      </div>
+                      <div class="row">
+                          <p class="left-align col s12">
+                              <label>
+                                  <input type="checkbox" class="filled-in " checked="checked"/>
+                                  <span>Recordarme</span>
+                              </label>
+                          </p>
+                      </div>
+                      <button (click)="login()" class="waves-effect waves-lighten btn red hide-on-large-only"><i class="material-icons left">arrow_forward</i>Ingresar</button>
+                      <button (click)="login()"  class="waves-effect waves-lighten btn-large red hide-on-med-and-down"><i class="material-icons left">arrow_forward</i>Ingresar</button>
+                  </form>
+              </div>
+          </div>
+      </div>
+  </div>
+</section>

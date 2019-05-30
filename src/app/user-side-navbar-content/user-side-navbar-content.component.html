@@ -1,0 +1,55 @@
+<ul [class]="NavbarType" [id]="NavbarId">
+  <li>
+      <div class="user-info">
+          <div class="row">
+              <div class="col l4 valign-wrapper">
+                  <img src="assets/images/boy.svg" alt="" class="circle red">
+              </div>
+          </div>
+          <div class="row">
+              <div class="col l8">
+                  <ul>
+                      <li class="user-name">{{guestName}}</li>
+                      <li  class="user-room">Habitación {{guestRoom}}</li>
+                  </ul>
+              </div>
+          </div>
+      </div>
+  </li>
+  <li>
+    <ul class="collapsible">
+      <ng-template ngFor let-list [ngForOf]="itemsLists">
+        <li *ngFor="let mainItem of list">
+          <ng-container [ngSwitch]="mainItem.type">
+            <div *ngSwitchCase="'divider'" class="divider"></div>
+            <li *ngSwitchCase="'divider-title'"><a class="subheader">{{mainItem.name}}</a></li>
+            <ng-container *ngSwitchCase="'item'">
+              <div (click)="onSelect(mainItem.navParams)" class="collapsible-header">
+                <i class="material-icons">{{mainItem.icon}}</i>{{mainItem.name}}
+              </div>
+              <div class="collapsible-body">
+                <ul class="collapsible" *ngIf="true">
+                  <li *ngFor="let item of mainItem.items">
+                    <div (click)="onSelect(item.navParams)" class="collapsible-header">
+                        <span>{{item.name}}</span>
+                    </div>
+                    <div class="collapsible-body">
+                        <ul class="collapsible" *ngIf="true">
+                            <li *ngFor="let subitem of item.subItems">
+                              <div (click)="onSelect(subitem.navParams)" class="collapsible-header">
+                                  <span>{{subitem.name}}</span>
+                              </div>
+                              <div class="collapsible-body"></div>
+                            </li>
+                        </ul>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </ng-container>
+          </ng-container>
+        </li>
+      </ng-template>
+    </ul>
+  </li>
+</ul>

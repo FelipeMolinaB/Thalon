@@ -1,0 +1,27 @@
+<div class="navbar-fixed">
+    <nav>
+        <div class="nav-wrapper">
+            <ul class="thalon-logo">
+                <li>
+                    <a href="#!" class="brand-logo">
+                        <img  align="left" src="assets/images/stonehenge.svg" alt="">
+                        <span class="hide-on-small-only">Thalon</span>
+                    </a>
+                </li>
+            </ul>
+            <a href="#" data-target="mobile-sidenav" class="sidenav-trigger"><i class="material-icons">menu</i></a>
+            <ul class="right hide-on-med-and-down">
+                <li><a (click)="showShoppingCart()"><i class="material-icons left">shopping_cart</i>Carrito</a></li>
+                <li><a class="dropdown-trigger" data-target="user-options"><i class="material-icons left">face</i>Usuario</a></li>
+            </ul>
+        </div>
+    </nav>
+</div>
+
+<ul id="user-options" class="dropdown-content">
+    <li><a href="#!"><i class="material-icons left">help_outline</i>Ayuda</a></li>
+    <li class="divider"></li>
+    <li><a (click)="logout()"><i class="material-icons left">undo</i>Cerrar Sesión</a></li>
+</ul>
+
+<app-user-side-navbar-content [NavbarType]="'sidenav scroll'" [NavbarId]="'mobile-sidenav'"></app-user-side-navbar-content>

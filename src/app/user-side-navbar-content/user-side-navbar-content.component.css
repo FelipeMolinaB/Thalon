@@ -1,0 +1,86 @@
+.side{
+    margin: 0;
+}
+.user-info{
+    background: url("../../assets/images/bgnd.jpeg") no-repeat center center;
+    background-size: cover;
+    position: relative;
+    padding-left: 5%;
+    padding-right: 10%;
+    padding-top: 10%;
+    padding-bottom: 10%;
+    margin-bottom: 0px;
+}
+
+.side li{
+    line-height: 48px;
+}
+
+.collapsible-body{
+    padding-left: 32px !important;
+}
+
+ul .collapsible{
+    margin-top: 0 !important;
+}
+
+.side .collapsible-body{
+    padding-right: 0;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.side .collapsible-header{
+    border: 0;
+    line-height: inherit;
+}
+
+#desktop-sidenav .collapsible-body .collapsible-header{
+  line-height: 1.5;
+}
+
+#mobile-sidenav .collapsible-body .collapsible-header{
+  line-height: inherit;
+}
+.side .collapsible-body .collapsible{
+    margin: 0;
+    border: 0;
+}
+
+.collapsible{
+    -webkit-box-shadow: none;
+}
+
+.side li.active{
+    background-color: rgba(0, 0, 0, 0.05);
+}
+
+.side .collapsible-body{
+    background-color: rgba(255, 255, 255);
+}
+.side .collapsible-header{
+    background-color: transparent;
+}
+
+.user-info .row{
+    margin: 0 !important;
+}
+
+.user-info li {
+    color: white;
+    line-height: 1.5;
+}
+
+.user-info img{
+    width: 80px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+.user-info .user-name{
+    font-weight: bold;
+}
+
+.user-info .user-room{
+    font-style: italic;
+}

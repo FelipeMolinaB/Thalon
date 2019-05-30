@@ -1,0 +1,43 @@
+.card-image img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 200px;
+  width: auto;
+}
+
+.card-action{
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.counter{
+  padding: 0 10%;
+}
+
+.card-action .btn{
+  height: 40px;
+  line-height: 40px;
+}
+.card-content .price{
+  font-size: 16px;
+  margin-bottom: 0;
+  padding-right: 24px;
+}
+/* .card-content{
+  padding-bottom: 10px;
+} */
+
+.card-content .collapsible-header .card-title{
+  margin: 0;
+  padding: 0;
+  line-height: 21px !important;
+}
+.card-content{
+  padding: 0;
+}
+
+.card-content .collapsible{
+    border: 0;
+    box-shadow: none;
+}

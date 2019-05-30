@@ -1,0 +1,27 @@
+.nav-wrapper ul li {
+    display: inline-block;
+}
+.nav-wrapper ul li a img{
+    height: 60px;
+    padding: 0.2em;
+}
+.thalon-logo li a span{
+    padding-left: 0.2em;
+    padding-right: 0.5em;
+}
+
+@media only screen and (max-width: 768px) {
+    .thalon-logo li a img{
+        height: 56px;
+        padding: 0.2em
+    }
+}
+
+ul li div a {
+    width: 100% !important;
+    color: rgba(0, 0, 0, 0.87);
+}
+
+.dropdown-trigger{
+    padding: 0 50px
+}

@@ -1,0 +1,102 @@
+.no-margin{
+  margin: 0;
+}
+
+a{
+  cursor: pointer;
+}
+
+ul li{
+  display: inline;
+}
+
+ul li i{
+    padding: 0 5px;
+    font-size: 30px;
+}
+
+ul li a{
+    color: black;
+}
+
+a img{
+  height: 30px;
+  padding: 0 5px;
+}
+
+.dropdown-content li>a>i{
+  margin: 0;
+}
+
+#currencyDropdown li>a,#viewDropdown li>a{
+  padding: 12px 0px;
+}
+#sortByDropdown li>a{
+  padding-left: 12px;
+  padding-right: 0;
+}
+
+.card-image img{
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 200px;
+  width: auto;
+}
+
+.card-action{
+  padding-left: 16px;
+  padding-right: 16px;
+}
+
+.counter{
+  padding: 0 10%;
+}
+
+.card-action .btn{
+  height: 40px;
+  line-height: 40px;
+}
+.card-content .price{
+  font-size: 16px;
+  margin-bottom: 0;
+  padding-right: 24px;
+}
+/* .card-content{
+  padding-bottom: 10px;
+} */
+
+.card-content .collapsible-header .card-title{
+  margin: 0;
+  padding: 0;
+  line-height: 21px !important;
+}
+.card-content{
+  padding: 0;
+}
+
+.card-content .collapsible{
+    border: 0;
+    box-shadow: none;
+}
+
+.header col{
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.input-field input[type=search]{
+  border-bottom: solid 1px !important;
+  border-bottom-color: #afafaf !important;
+  padding: 0 !important;
+  margin-left: 4rem !important;
+}
+
+.input-field input[type=search]:focus:not(.browser-default){
+  border-bottom-color: #000 !important;
+}
+
+td img {
+  height: 100px;
+  width: auto;
+}
